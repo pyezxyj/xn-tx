@@ -32,4 +32,10 @@ public class OrderNoGenerater {
         return prefix + today + String.valueOf(random);
     }
 
+    public static String generateM(String prefix) {
+        int random = Math.abs(new Random().nextInt()) % 10;
+        String today = DateUtil.getToday(DateUtil.DATA_TIME_PATTERN_5);
+        return prefix + today + String.valueOf(random);
+    }
+
 }

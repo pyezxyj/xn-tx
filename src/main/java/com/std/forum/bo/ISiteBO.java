@@ -27,6 +27,12 @@ public interface ISiteBO extends IPaginableBO<Site> {
 
     public int refreshSite(Site data);
 
+    // 更新站点是否默认
+    public int refreshSiteDef(Site data);
+
+    // 禁用站点
+    public int refreshSitePri(Site data);
+
     public Site getSite(String code);
 
     public List<Site> querySiteList(Site condition);

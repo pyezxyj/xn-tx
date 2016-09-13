@@ -30,6 +30,10 @@ public class DateUtil {
 
     public static final String DATA_TIME_PATTERN_4 = "yyyyMMddHHmmssSSS";
 
+    public static final String DATA_TIME_PATTERN_5 = "yyyyMMddHHmmssSSS";
+
+    public static final String DATA_TIME_PATTERN_6 = "yyyy年MM月dd日";
+
     public static final String TIME_BEGIN = " 00:00:00";
 
     public static final String TIME_END = " 23:59:59";;

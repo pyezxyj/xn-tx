@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-	<typeAliases>		
+	<typeAliases>
 		<typeAlias alias="site" type="com.std.forum.domain.Site" />
-		<typeAlias alias="plate" type="com.std.forum.domain.Plate" />
-		<typeAlias alias="post" type="com.std.forum.domain.Post" />
-		<typeAlias alias="postTalk" type="com.std.forum.domain.PostTalk" />
-		<typeAlias alias="comment" type="com.std.forum.domain.Comment" />
-		
-		<typeAlias alias="keyword" type="com.std.forum.domain.Keyword" />
 	</typeAliases>
 </configuration>	

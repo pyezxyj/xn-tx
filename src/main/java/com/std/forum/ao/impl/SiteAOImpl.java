@@ -61,11 +61,35 @@ public class SiteAOImpl implements ISiteAO {
         return siteBO.querySiteList(condition);
     }
 
-    /** 
-     * @see com.std.forum.ao.ISiteAO#doGetSite(java.lang.String)
-     */
     @Override
-    public Site doGetSite(String code) {
-        return siteBO.getSite(code);
+    public int editSiteDef(Site data) {
+        return siteBO.refreshSiteDef(data);
+    }
+
+    @Override
+    public int editSitePri(Site data) {
+        return siteBO.refreshSitePri(data);
+    }
+
+    @Override
+    public Site getSiteByJW(Site condition) {
+        Site condition1 = new Site();
+        List<Site> list = siteBO.querySiteList(condition1);
+        double lo = Double.valueOf(condition.getLongitude());
+        double la = Double.valueOf(condition.getLatitude());
+        for (Site site : list) {
+            String[] los = site.getLongitude().split("-");
+            String[] las = site.getLatitude().split("-");
+            if (los.length > 1 && las.length > 1) {
+                double lo1 = Double.valueOf(los[0]);
+                double lo2 = Double.valueOf(los[1]);
+                double la1 = Double.valueOf(las[0]);
+                double la2 = Double.valueOf(las[1]);
+                if (lo >= lo1 && lo <= lo2 && la >= la1 && la <= la2) {
+                    return site;
+                }
+            }
+        }
+        return null;
     }
 }

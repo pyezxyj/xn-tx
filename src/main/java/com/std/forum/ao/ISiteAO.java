@@ -29,5 +29,12 @@ public interface ISiteAO {
 
     public List<Site> querySiteList(Site condition);
 
-    public Site doGetSite(String code);
+    // 设置默认站点
+    public int editSiteDef(Site data);
+
+    // 禁用站点
+    public int editSitePri(Site data);
+
+    // 经纬度查询站点
+    public Site getSiteByJW(Site condition);
 }
