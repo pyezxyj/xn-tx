@@ -29,6 +29,7 @@ public class NavigateAOImpl implements INavigateAO {
 
     @Override
     public int editNavigate(Navigate data) {
+        navigateBO.isExistNavigate(data.getTitle());
         return navigateBO.refreshNavigate(data);
     }
 
@@ -46,6 +47,11 @@ public class NavigateAOImpl implements INavigateAO {
     @Override
     public List<Navigate> queryNavigateList(Navigate condition) {
         return navigateBO.queryNavigateList(condition);
+    }
+
+    @Override
+    public Navigate getNavigate(String code) {
+        return navigateBO.getNavigate(code);
     }
 
 }

@@ -44,6 +44,7 @@ public class SiteAOImpl implements ISiteAO {
      */
     @Override
     public int editSite(Site data) {
+        siteBO.isExistSite(data.getName());
         return siteBO.refreshSite(data);
     }
 
@@ -128,5 +129,10 @@ public class SiteAOImpl implements ISiteAO {
             }
         }
         return null;
+    }
+
+    @Override
+    public Site getSite(String code) {
+        return siteBO.getSite(code);
     }
 }

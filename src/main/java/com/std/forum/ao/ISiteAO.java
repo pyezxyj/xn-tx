@@ -37,4 +37,7 @@ public interface ISiteAO {
 
     // 经纬度查询站点
     public Site getSiteByJW(Site condition);
+
+    public Site getSite(String code);
+
 }

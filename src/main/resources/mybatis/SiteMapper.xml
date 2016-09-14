@@ -27,7 +27,10 @@
 				AND t.code = #{code}
 			</if>
 			<if test="name != null and name != '' ">
-				AND t.name like "%"#{name}"%"
+				AND t.name = #{name}
+			</if>
+			<if test="nameForQuery != null and nameForQuery != '' ">
+				AND t.name like "%"#{nameForQuery}"%"
 			</if>
 			<if test="userId != null and userId != '' ">
 				AND t.user_id = #{userId}
@@ -118,21 +121,21 @@
 	<update id="update_site" parameterType="site">
 		UPDATE site
 		SET
-		name=#{name},
-		longitude=#{longitude},
-		latitude=#{latitude},
-		user_id=#{userId},
-		priority=#{priority},
+		name=#{name}
+		,longitude=#{longitude}
+		,latitude=#{latitude}
+		,user_id=#{userId}
+		,priority=#{priority}
 
-		domain=#{domain},
-		logo=#{logo},
-		address=#{address},
-		telephone=#{telephone},
-		description=#{description},
+		,domain=#{domain}
+		,logo=#{logo}
+		,address=#{address}
+		,telephone=#{telephone}
+		,description=#{description}
 
-		email=#{email},
-		qr_code=#{qrCode},
-		remark=#{remark}
+		,email=#{email}
+		,qr_code=#{qrCode}
+		,remark=#{remark}
 		WHERE
 		code = #{code}
 	</update>

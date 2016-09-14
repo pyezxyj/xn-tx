@@ -18,4 +18,6 @@ public interface INavigateAO {
             Navigate condition);
 
     public List<Navigate> queryNavigateList(Navigate condition);
+
+    public Navigate getNavigate(String code);
 }

@@ -24,7 +24,10 @@
 				AND t.code = #{code}
 			</if>
 			<if test="title != null and title != '' ">
-				AND t.title like "%"#{title}"%"
+				AND t.title = #{title}
+			</if>
+			<if test="titleForQuery != null and titleForQuery != '' ">
+				AND t.title like "%"#{titleForQuery}"%"
 			</if>
 			<if test="status != null and status != '' ">
 				AND t.status = #{status}

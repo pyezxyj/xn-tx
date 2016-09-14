@@ -2,39 +2,34 @@ package com.std.forum.api.impl;
 
 import com.std.forum.ao.INavigateAO;
 import com.std.forum.api.AProcessor;
-import com.std.forum.api.converter.NavigateConverter;
 import com.std.forum.common.JsonUtil;
 import com.std.forum.core.StringValidater;
-import com.std.forum.domain.Navigate;
-import com.std.forum.dto.req.XN610021Req;
-import com.std.forum.dto.res.BooleanRes;
+import com.std.forum.dto.req.XN610032Req;
 import com.std.forum.exception.BizException;
 import com.std.forum.exception.ParaException;
 import com.std.forum.spring.SpringContextHolder;
 
 /** 
- * 删除导航
+ * 详情查询导航信息
  * @author: zuixian 
- * @since: 2016年9月14日 下午5:09:30 
+ * @since: 2016年9月14日 下午5:07:59 
  * @history:
  */
-public class XN610021 extends AProcessor {
+public class XN610032 extends AProcessor {
 
     private INavigateAO navigateAO = SpringContextHolder
         .getBean(INavigateAO.class);
 
-    private XN610021Req req = null;
+    private XN610032Req req = null;
 
     @Override
     public Object doBusiness() throws BizException {
-        Navigate data = NavigateConverter.converter(req);
-        return new BooleanRes(navigateAO.removeNavigate(data) > 0 ? true
-                : false);
+        return navigateAO.getNavigate(req.getCode());
     }
 
     @Override
     public void doCheck(String inputparams) throws ParaException {
-        req = JsonUtil.json2Bean(inputparams, XN610021Req.class);
+        req = JsonUtil.json2Bean(inputparams, XN610032Req.class);
         StringValidater.validateBlank(req.getCode());
     }
 

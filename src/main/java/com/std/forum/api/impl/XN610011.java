@@ -10,6 +10,12 @@ import com.std.forum.exception.BizException;
 import com.std.forum.exception.ParaException;
 import com.std.forum.spring.SpringContextHolder;
 
+/** 
+ * 列表查询站点信息
+ * @author: zuixian 
+ * @since: 2016年9月14日 下午5:10:26 
+ * @history:
+ */
 public class XN610011 extends AProcessor {
 
     private ISiteAO siteAO = SpringContextHolder.getBean(ISiteAO.class);

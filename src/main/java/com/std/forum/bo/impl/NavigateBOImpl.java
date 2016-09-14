@@ -2,6 +2,7 @@ package com.std.forum.bo.impl;
 
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -33,6 +34,17 @@ public class NavigateBOImpl extends PaginableBOImpl<Navigate> implements
         if (count > 0) {
             throw new BizException("xn000000", "该导航标题已存在");
         }
+    }
+
+    @Override
+    public Navigate getNavigate(String code) {
+        Navigate result = null;
+        if (StringUtils.isNotBlank(code)) {
+            Navigate condition = new Navigate();
+            condition.setCode(code);
+            result = navigateDAO.select(condition);
+        }
+        return result;
     }
 
     @Override

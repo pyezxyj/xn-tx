@@ -60,6 +60,7 @@ public class Site extends ABaseDO {
     private String remark;
 
     // ********** db properties ***********
+
     private String nameForQuery;
 
     public String getCode() {
@@ -180,5 +181,13 @@ public class Site extends ABaseDO {
 
     public void setRemark(String remark) {
         this.remark = remark;
+    }
+
+    public String getNameForQuery() {
+        return nameForQuery;
+    }
+
+    public void setNameForQuery(String nameForQuery) {
+        this.nameForQuery = nameForQuery;
     }
 }

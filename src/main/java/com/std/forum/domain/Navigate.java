@@ -48,6 +48,10 @@ public class Navigate extends ABaseDO {
     // 备注
     private String remark;
 
+    // ********** db properties ***********
+
+    private String titleForQuery;
+
     public String getCode() {
         return code;
     }
@@ -134,5 +138,13 @@ public class Navigate extends ABaseDO {
 
     public void setRemark(String remark) {
         this.remark = remark;
+    }
+
+    public String getTitleForQuery() {
+        return titleForQuery;
+    }
+
+    public void setTitleForQuery(String titleForQuery) {
+        this.titleForQuery = titleForQuery;
     }
 }

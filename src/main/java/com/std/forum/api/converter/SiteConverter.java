@@ -66,7 +66,7 @@ public class SiteConverter {
     // 分页查询站点信息
     public static Site converter(XN610010Req req) {
         Site result = new Site();
-        result.setName(req.getName());
+        result.setNameForQuery(req.getName());
         result.setUserId(req.getUserId());
         result.setPriority(req.getPriority());
         result.setIsDefault(req.getIsDefault());
@@ -77,7 +77,7 @@ public class SiteConverter {
     public static Site converter(XN610011Req req) {
         Site result = new Site();
         result.setCode(req.getCode());
-        result.setName(req.getName());
+        result.setNameForQuery(req.getName());
         result.setUserId(req.getUserId());
         result.setPriority(req.getPriority());
         result.setIsDefault(req.getIsDefault());

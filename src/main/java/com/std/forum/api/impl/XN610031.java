@@ -10,6 +10,12 @@ import com.std.forum.exception.BizException;
 import com.std.forum.exception.ParaException;
 import com.std.forum.spring.SpringContextHolder;
 
+/** 
+ * 列表查询导航信息
+ * @author: zuixian 
+ * @since: 2016年9月14日 下午5:08:38 
+ * @history:
+ */
 public class XN610031 extends AProcessor {
 
     private INavigateAO navigateAO = SpringContextHolder
