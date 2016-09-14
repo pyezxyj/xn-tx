@@ -10,7 +10,9 @@ import com.std.forum.bo.INavigateBO;
 import com.std.forum.bo.base.PaginableBOImpl;
 import com.std.forum.core.OrderNoGenerater;
 import com.std.forum.dao.INavigateDAO;
+import com.std.forum.dao.ISiteDAO;
 import com.std.forum.domain.Navigate;
+import com.std.forum.domain.Site;
 import com.std.forum.enums.EPrefixCode;
 import com.std.forum.exception.BizException;
 
@@ -25,6 +27,9 @@ public class NavigateBOImpl extends PaginableBOImpl<Navigate> implements
 
     @Autowired
     private INavigateDAO navigateDAO;
+
+    @Autowired
+    private ISiteDAO siteDAO;
 
     @Override
     public void isExistNavigate(String title) {
@@ -53,6 +58,18 @@ public class NavigateBOImpl extends PaginableBOImpl<Navigate> implements
         if (data != null) {
             code = OrderNoGenerater.generateM(EPrefixCode.NAVIGATE.getCode());
             data.setCode(code);
+            if (data.getIsGlobal().equals("0")) {
+                Site site = new Site();
+                site.setUserId(data.getSiteCode());
+                Site result = siteDAO.select(site);
+                if (result != null) {
+                    data.setSiteCode(result.getCode());
+                } else {
+                    throw new BizException("xn000000", "该用户无负责站点");
+                }
+            } else {
+                data.setSiteCode("0");
+            }
             navigateDAO.insert(data);
         }
         return code;
