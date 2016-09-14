@@ -14,4 +14,7 @@
 	<bean id="siteBO" class="com.std.forum.bo.impl.SiteBOImpl">
 		<property name="paginableDAO" ref="siteDAOImpl" />
 	</bean>
+	<bean id="navigateBO" class="com.std.forum.bo.impl.NavigateBOImpl">
+		<property name="paginableDAO" ref="navigateDAOImpl" />
+	</bean>
 </beans>

@@ -3,5 +3,6 @@
 <configuration>
 	<typeAliases>
 		<typeAlias alias="site" type="com.std.forum.domain.Site" />
+		<typeAlias alias="navigate" type="com.std.forum.domain.Navigate" />
 	</typeAliases>
 </configuration>	
