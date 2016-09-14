@@ -34,8 +34,8 @@ public class NavigateAOImpl implements INavigateAO {
     }
 
     @Override
-    public int removeNavigate(Navigate data) {
-        return navigateBO.deleteNavigate(data);
+    public int removeNavigate(String code) {
+        return navigateBO.deleteNavigate(code);
     }
 
     @Override

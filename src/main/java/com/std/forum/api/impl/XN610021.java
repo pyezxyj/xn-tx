@@ -2,10 +2,8 @@ package com.std.forum.api.impl;
 
 import com.std.forum.ao.INavigateAO;
 import com.std.forum.api.AProcessor;
-import com.std.forum.api.converter.NavigateConverter;
 import com.std.forum.common.JsonUtil;
 import com.std.forum.core.StringValidater;
-import com.std.forum.domain.Navigate;
 import com.std.forum.dto.req.XN610021Req;
 import com.std.forum.dto.res.BooleanRes;
 import com.std.forum.exception.BizException;
@@ -27,9 +25,8 @@ public class XN610021 extends AProcessor {
 
     @Override
     public Object doBusiness() throws BizException {
-        Navigate data = NavigateConverter.converter(req);
-        return new BooleanRes(navigateAO.removeNavigate(data) > 0 ? true
-                : false);
+        return new BooleanRes(
+            navigateAO.removeNavigate(req.getCode()) > 0 ? true : false);
     }
 
     @Override

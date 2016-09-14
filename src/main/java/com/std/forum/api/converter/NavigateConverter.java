@@ -2,7 +2,6 @@ package com.std.forum.api.converter;
 
 import com.std.forum.domain.Navigate;
 import com.std.forum.dto.req.XN610020Req;
-import com.std.forum.dto.req.XN610021Req;
 import com.std.forum.dto.req.XN610022Req;
 import com.std.forum.dto.req.XN610030Req;
 import com.std.forum.dto.req.XN610031Req;
@@ -21,13 +20,6 @@ public class NavigateConverter {
         result.setParentCode(req.getParentCode());
         result.setSiteCode(req.getUserId());
         result.setRemark(req.getRemark());
-        return result;
-    }
-
-    // 删除导航
-    public static Navigate converter(XN610021Req req) {
-        Navigate result = new Navigate();
-        result.setCode(req.getCode());
         return result;
     }
 

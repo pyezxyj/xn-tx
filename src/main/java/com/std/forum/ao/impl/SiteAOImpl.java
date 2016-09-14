@@ -100,13 +100,13 @@ public class SiteAOImpl implements ISiteAO {
     }
 
     @Override
-    public int editSiteDef(Site data) {
-        return siteBO.refreshSiteDef(data);
+    public int editSiteDef(String code) {
+        return siteBO.refreshSiteDef(code);
     }
 
     @Override
-    public int editSitePri(Site data) {
-        return siteBO.refreshSitePri(data);
+    public int editSitePri(String code) {
+        return siteBO.refreshSitePri(code);
     }
 
     @Override

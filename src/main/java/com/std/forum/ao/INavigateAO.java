@@ -12,7 +12,7 @@ public interface INavigateAO {
 
     public int editNavigate(Navigate data);
 
-    public int removeNavigate(Navigate data);
+    public int removeNavigate(String code);
 
     public Paginable<Navigate> queryNavigatePage(int start, int limit,
             Navigate condition);

@@ -2,9 +2,7 @@ package com.std.forum.api.converter;
 
 import com.std.forum.domain.Site;
 import com.std.forum.dto.req.XN610000Req;
-import com.std.forum.dto.req.XN610001Req;
 import com.std.forum.dto.req.XN610002Req;
-import com.std.forum.dto.req.XN610003Req;
 import com.std.forum.dto.req.XN610010Req;
 import com.std.forum.dto.req.XN610011Req;
 import com.std.forum.dto.req.XN610012Req;
@@ -29,13 +27,6 @@ public class SiteConverter {
         return result;
     }
 
-    // 禁用站点
-    public static Site converter(XN610001Req req) {
-        Site result = new Site();
-        result.setCode(req.getCode());
-        return result;
-    }
-
     // 修改站点信息
     public static Site converter(XN610002Req req) {
         Site result = new Site();
@@ -53,13 +44,6 @@ public class SiteConverter {
         result.setEmail(req.getEmail());
         result.setQrCode(req.getQrCode());
         result.setRemark(req.getRemark());
-        return result;
-    }
-
-    // 设置默认站点
-    public static Site converter(XN610003Req req) {
-        Site result = new Site();
-        result.setCode(req.getCode());
         return result;
     }
 

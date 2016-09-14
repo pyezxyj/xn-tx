@@ -90,9 +90,11 @@ public class NavigateBOImpl extends PaginableBOImpl<Navigate> implements
     }
 
     @Override
-    public int deleteNavigate(Navigate data) {
+    public int deleteNavigate(String code) {
+        Navigate data = new Navigate();
         int count = 0;
-        if (data != null && data.getCode() != null) {
+        if (code != null && code != "") {
+            data.setCode(code);
             count = navigateDAO.delete(data);
         }
         return count;

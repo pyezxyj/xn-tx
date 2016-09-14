@@ -2,10 +2,8 @@ package com.std.forum.api.impl;
 
 import com.std.forum.ao.ISiteAO;
 import com.std.forum.api.AProcessor;
-import com.std.forum.api.converter.SiteConverter;
 import com.std.forum.common.JsonUtil;
 import com.std.forum.core.StringValidater;
-import com.std.forum.domain.Site;
 import com.std.forum.dto.req.XN610001Req;
 import com.std.forum.dto.res.BooleanRes;
 import com.std.forum.exception.BizException;
@@ -26,8 +24,8 @@ public class XN610001 extends AProcessor {
 
     @Override
     public Object doBusiness() throws BizException {
-        Site data = SiteConverter.converter(req);
-        return new BooleanRes(siteAO.editSitePri(data) > 0 ? true : false);
+        return new BooleanRes(siteAO.editSitePri(req.getCode()) > 0 ? true
+                : false);
     }
 
     @Override

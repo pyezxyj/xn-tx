@@ -95,9 +95,11 @@ public class SiteBOImpl extends PaginableBOImpl<Site> implements ISiteBO {
     }
 
     @Override
-    public int refreshSiteDef(Site data) {
+    public int refreshSiteDef(String code) {
+        Site data = new Site();
         int count = 0;
-        if (data != null && data.getCode() != null) {
+        if (code != null && code != "") {
+            data.setCode(code);
             // 先找出默认的站点
             Site site1 = new Site();
             site1.setIsDefault("1");
@@ -126,9 +128,11 @@ public class SiteBOImpl extends PaginableBOImpl<Site> implements ISiteBO {
     }
 
     @Override
-    public int refreshSitePri(Site data) {
+    public int refreshSitePri(String code) {
+        Site data = new Site();
         int count = 0;
-        if (data != null && data.getCode() != null) {
+        if (code != null && code != "") {
+            data.setCode(code);
             data.setPriority("0");
             count = siteDAO.updatePri(data);
         }

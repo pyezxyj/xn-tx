@@ -19,7 +19,7 @@ public interface INavigateBO extends IPaginableBO<Navigate> {
 
     public int refreshNavigate(Navigate data);
 
-    public int deleteNavigate(Navigate data);
+    public int deleteNavigate(String code);
 
     public List<Navigate> queryNavigateList(Navigate condition);
 
