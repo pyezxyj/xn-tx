@@ -2,6 +2,12 @@ package com.std.forum.domain;
 
 import com.std.forum.dao.base.ABaseDO;
 
+/**
+ * 导航
+ * @author: xieyj 
+ * @since: 2016年9月14日 下午3:30:01 
+ * @history:
+ */
 public class Navigate extends ABaseDO {
 
     /** 

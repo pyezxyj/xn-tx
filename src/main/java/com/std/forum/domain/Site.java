@@ -1,15 +1,6 @@
-/**
- * @Title Site.java 
- * @Package com.std.forum.domain 
- * @Description 
- * @author xieyj  
- * @date 2016年8月28日 下午8:12:39 
- * @version V1.0   
- */
 package com.std.forum.domain;
 
 import com.std.forum.dao.base.ABaseDO;
-
 
 /** 
  * 站点
@@ -67,6 +58,9 @@ public class Site extends ABaseDO {
 
     // 备注
     private String remark;
+
+    // ********** db properties ***********
+    private String nameForQuery;
 
     public String getCode() {
         return code;
